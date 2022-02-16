@@ -146,7 +146,7 @@ func (dt *DbfTable) AddFloatField(fieldName string, length byte, decimalPlaces u
 	return dt.addField(fieldName, Float, length, decimalPlaces)
 }
 
-func (dt *DbfTable) addField(fieldName string, fieldType DbaseDataType, length byte, decimalPlaces uint8) (err error) {
+func (dt *DbfTable) AddField(fieldName string, fieldType DbaseDataType, length byte, decimalPlaces uint8) (err error) {
 
 	if dt.dataEntryStarted {
 		return errors.New("Once you start entering data to the dbase table or open an existing dbase file, altering dbase table schema is not allowed!")
