@@ -127,23 +127,23 @@ func New(encoding string) (table *DbfTable) {
 }
 
 func (dt *DbfTable) AddBooleanField(fieldName string) (err error) {
-	return dt.addField(fieldName, Logical, Logical.fixedFieldLength(), Logical.decimalCountNotApplicable())
+	return dt.AddField(fieldName, Logical, Logical.fixedFieldLength(), Logical.decimalCountNotApplicable())
 }
 
 func (dt *DbfTable) AddDateField(fieldName string) (err error) {
-	return dt.addField(fieldName, Date, Date.fixedFieldLength(), Date.decimalCountNotApplicable())
+	return dt.AddField(fieldName, Date, Date.fixedFieldLength(), Date.decimalCountNotApplicable())
 }
 
 func (dt *DbfTable) AddTextField(fieldName string, length byte) (err error) {
-	return dt.addField(fieldName, Character, length, Character.decimalCountNotApplicable())
+	return dt.AddField(fieldName, Character, length, Character.decimalCountNotApplicable())
 }
 
 func (dt *DbfTable) AddNumberField(fieldName string, length byte, decimalPlaces uint8) (err error) {
-	return dt.addField(fieldName, Numeric, length, decimalPlaces)
+	return dt.AddField(fieldName, Numeric, length, decimalPlaces)
 }
 
 func (dt *DbfTable) AddFloatField(fieldName string, length byte, decimalPlaces uint8) (err error) {
-	return dt.addField(fieldName, Float, length, decimalPlaces)
+	return dt.AddField(fieldName, Float, length, decimalPlaces)
 }
 
 func (dt *DbfTable) AddField(fieldName string, fieldType DbaseDataType, length byte, decimalPlaces uint8) (err error) {
